@@ -34,6 +34,7 @@ import org.apache.causeway.applib.services.swagger.Visibility;
 import org.apache.causeway.commons.internal.base._Strings;
 import org.apache.causeway.commons.internal.collections._Sets;
 import org.apache.causeway.core.metamodel.facets.object.domainservice.DomainServiceFacet;
+import org.apache.causeway.core.metamodel.services.ServiceUtil;
 import org.apache.causeway.core.metamodel.spec.ObjectSpecification;
 import org.apache.causeway.core.metamodel.spec.feature.MixedIn;
 import org.apache.causeway.core.metamodel.spec.feature.ObjectAction;
@@ -324,7 +325,7 @@ class Generation {
 
     void appendServicePath(final ObjectSpecification objectSpec) {
 
-        final String serviceId = objectSpec.getLogicalTypeName();
+        final String serviceId = serviceIdFor(objectSpec);
 
         final Path path = new Path();
         swagger.path(String.format("/services/%s", serviceId), path);
@@ -353,7 +354,7 @@ class Generation {
 
     ModelImpl appendObjectPathAndModelDefinitions(final ObjectSpecification objectSpec) {
 
-        final String logicalTypeName = objectSpec.getLogicalTypeName();
+        final String logicalTypeName = logicalTypeNameFor(objectSpec);
 
         final Path path = new Path();
         swagger.path(String.format("/objects/%s/{objectId}", logicalTypeName), path);
@@ -426,7 +427,7 @@ class Generation {
             final ObjectSpecification serviceSpec,
             final ObjectAction serviceAction) {
 
-        final String serviceId = serviceSpec.getLogicalTypeName();
+        final String serviceId = serviceIdFor(serviceSpec);
         final String actionId = serviceAction.getId();
 
         val parameters = serviceAction.getParameters();
@@ -512,7 +513,7 @@ class Generation {
             final ObjectSpecification objectSpec,
             final OneToManyAssociation collection) {
 
-        final String logicalTypeName = objectSpec.getLogicalTypeName();
+        final String logicalTypeName = logicalTypeNameFor(objectSpec);
         final String collectionId = collection.getId();
 
         final Path path = new Path();
@@ -541,7 +542,7 @@ class Generation {
             final ObjectSpecification objectSpec,
             final ObjectAction objectAction) {
 
-        final String logicalTypeName = objectSpec.getLogicalTypeName();
+        final String logicalTypeName = logicalTypeNameFor(objectSpec);
         final String actionId = objectAction.getId();
 
         val parameters = objectAction.getParameters();
@@ -646,7 +647,7 @@ class Generation {
         final ArrayProperty arrayProperty = new ArrayProperty();
         if(objectSpecification != null && objectSpecification.getCorrespondingClass() != Object.class) {
             arrayProperty
-            .description("List of " + objectSpecification.getLogicalTypeName())
+            .description("List of " + logicalTypeNameFor(objectSpecification))
             .items(modelFor(objectSpecification));
         } else {
             arrayProperty.items(new ObjectProperty());
@@ -684,7 +685,7 @@ class Generation {
         if(specification.getCorrespondingClass() == java.lang.Enum.class) {
             return new StringProperty();
         }
-        return newRefProperty(specification.getLogicalTypeName() + "Repr");
+        return newRefProperty(logicalTypeNameFor(specification) + "Repr");
     }
 
     void updateObjectModel(
@@ -693,7 +694,7 @@ class Generation {
             final List<OneToOneAssociation> objectProperties,
             final List<OneToManyAssociation> objectCollections) {
 
-        final String logicalTypeName = objectSpecification.getLogicalTypeName();
+        final String logicalTypeName = logicalTypeNameFor(objectSpecification);
         final String className = objectSpecification.getFullIdentifier();
 
         model
@@ -750,6 +751,14 @@ class Generation {
                 .property("extensions", new MapProperty())
                 .required("links")
                 .required("extensions");
+    }
+
+    static String serviceIdFor(final ObjectSpecification serviceSpec) {
+        return ServiceUtil.idOfSpec(serviceSpec);
+    }
+
+    static String logicalTypeNameFor(final ObjectSpecification objectSpec) {
+        return objectSpec.getLogicalTypeName();
     }
 
     static StringProperty stringProperty() {

@@ -340,7 +340,7 @@
 						<suffix>.min</suffix>
 						<excludes>
 							<!-- -->
-							<exclude>**/*.nocompress.js</exclude>
+							<exclude>**/jquery.causeway.wicket.viewer.js</exclude>
 							<!-- select 2 -->
 							<exclude>**/i18n/*.js</exclude>
 							<exclude>**/select2*.js</exclude>
@@ -462,6 +462,11 @@
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
 				<artifactId>causeway-core-internaltestsupport</artifactId>
+				<version>2.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.causeway.core</groupId>
+				<artifactId>causeway-core-internaltestvintage</artifactId>
 				<version>2.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
@@ -618,7 +623,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.viewer</groupId>
-				<artifactId>causeway-viewer-restfulobjects-jaxrsresteasy</artifactId>
+				<artifactId>causeway-viewer-restfulobjects-jaxrsresteasy4</artifactId>
 				<version>2.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
@@ -1296,7 +1301,7 @@
 			</dependency>
 
 			<dependency>
-				<groupId>org.webjars.npm</groupId>
+				<groupId>org.webjars.bower</groupId>
 				<artifactId>summernote</artifactId>
 				<version>${summernote.version}</version>
 			</dependency>
@@ -1502,7 +1507,7 @@
 					<plugin>
 						<groupId>org.owasp</groupId>
 						<artifactId>dependency-check-maven</artifactId>
-						<version>7.3.1</version>
+						<version>7.3.0</version>
 						<executions>
 							<execution>
 								<id>owasp-aggregate</id>
@@ -1667,6 +1672,7 @@
 		<module>config</module>
 		<module>interaction</module>
 		<module>internaltestsupport</module>
+		<module>internaltestvintage</module>
 		<module>metamodel</module>
 		<module>runtime</module>
 		<module>runtimeservices</module>
