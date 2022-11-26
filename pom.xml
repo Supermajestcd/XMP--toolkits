@@ -20,16 +20,16 @@
 		<version>2.0.0-M9</version>
 	</parent>
 
-	<artifactId>isis-tooling-metaprog</artifactId>
+	<artifactId>isis-tooling-c4modeling</artifactId>
 
-	<name>Apache Isis - Tooling - Meta Programming</name>
+	<name>Apache Isis - Tooling - C4 Modeling</name>
 	<description>
-        Tools for Java meta-programming and runtime class generaton.
+        Library for programmatic C4 Model generation.
+
+        See https://c4model.com/
     </description>
 
 	<properties>
-		<javapoet.version>1.13.0</javapoet.version>
-		<skipTests>true</skipTests>
 		<enforcer.skip>true</enforcer.skip>
 	</properties>
 
@@ -40,34 +40,14 @@
 			<artifactId>isis-commons</artifactId>
 		</dependency>
 
-        <!-- GRAPHQL -->
-        
-        <dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>graphql-java</artifactId>
-		</dependency>
-		
-		<!-- JAVA META PROGRAMMING -->
-		
 		<dependency>
-			<groupId>com.squareup</groupId>
-			<artifactId>javapoet</artifactId>
-			<version>${javapoet.version}</version>
+			<groupId>com.structurizr</groupId>
+			<artifactId>structurizr-core</artifactId>
 		</dependency>
-		
-		<dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        
-		<!-- TESTING -->
 
 		<dependency>
-			<groupId>org.apache.isis.core</groupId>
-			<artifactId>isis-core-internaltestsupport</artifactId>
-			<scope>test</scope>
-			<version>${project.version}</version>
+			<groupId>com.structurizr</groupId>
+			<artifactId>structurizr-plantuml</artifactId>
 		</dependency>
 
 	</dependencies>
