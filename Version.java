@@ -17,10 +17,16 @@
  * under the License.
  */
 
-package sample.axisversion;
+package sample.jaxws;
 
+import javax.jws.WebService;
+
+@WebService(serviceName = "JAXWSVersion",
+            portName="VersionPort",
+            wsdlLocation="META-INF/version.wsdl")
 public class Version {
     public String getVersion() throws Exception {
-        return "Hi - the Axis2 version is " + org.apache.axis2.Version.getVersionText();
+        return "Hello I am Axis2 version service ," +
+                " My version is " + org.apache.axis2.Version.getVersionText();
     }
 }
