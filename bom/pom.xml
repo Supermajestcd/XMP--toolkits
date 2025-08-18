@@ -412,7 +412,7 @@ It is therefore a copy of org.apache:apache, with customisations clearly identif
         <shiro.version>1.10.1</shiro.version>
         <simpleslackapi.version>1.4.0</simpleslackapi.version>
         <slf4j-api.version>2.0.5</slf4j-api.version> <!-- also provided by spring-boot-starter-logging, needed to solve convergence issues -->
-        <spring-boot.version>3.0.0</spring-boot.version>
+        <spring-boot.version>3.3.7</spring-boot.version>
         <summernote.version>0.8.20</summernote.version>
         <surefire-plugin.argLine>-Xmx384m</surefire-plugin.argLine>
         <swagger-core.version>1.6.9</swagger-core.version>
@@ -422,7 +422,7 @@ It is therefore a copy of org.apache:apache, with customisations clearly identif
         <vaadin.version>23.2.10</vaadin.version>
 
         <wicket.version>9.12.0</wicket.version> <!--  9.4.0 is last known good, before wicket put jupiter-api on the module graph -->
-        <wicket-bootstrap.version>6.0.0-M8</wicket-bootstrap.version> <!-- de.agilecoders.wicket:wicket-bootstrap... -->
+        <wicket-bootstrap.version>6.0.6</wicket-bootstrap.version> <!-- de.agilecoders.wicket:wicket-bootstrap... -->
         <wicket-webjars.version>3.0.6</wicket-webjars.version>
         <wicket-viewer-jquery.version>3.6.1</wicket-viewer-jquery.version> <!--  as served by wicket via webjars -->
 
