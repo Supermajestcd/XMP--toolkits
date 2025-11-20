@@ -474,7 +474,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
 				<artifactId>causeway-core-runtime</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
@@ -564,7 +564,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.persistence</groupId>
 				<artifactId>causeway-persistence-commons</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.persistence</groupId>
@@ -604,7 +604,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.persistence</groupId>
 				<artifactId>causeway-persistence-jpa-metamodel</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.persistence</groupId>
