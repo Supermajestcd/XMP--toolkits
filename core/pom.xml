@@ -429,7 +429,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
 				<artifactId>causeway-applib</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 				<type>jar</type>
 				<scope>compile</scope>
 			</dependency>
@@ -479,7 +479,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
 				<artifactId>causeway-core-runtimeservices</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
@@ -534,12 +534,12 @@
 			<dependency>
 				<groupId>org.apache.causeway.core</groupId>
 				<artifactId>causeway-core-security</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.security</groupId>
 				<artifactId>causeway-security-bypass</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.security</groupId>
@@ -619,7 +619,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.viewer</groupId>
 				<artifactId>causeway-viewer-restfulobjects-jaxrsresteasy</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.viewer</groupId>
@@ -644,7 +644,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.viewer</groupId>
 				<artifactId>causeway-viewer-wicket-viewer</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<version>3.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.causeway.incubator.viewer</groupId>
